@@ -7,6 +7,6 @@
 
 #define DEFAULT_WIDTH 5
 #define DEFAULT_HEIGHT 5
-#define VOID_CHAR ' '
+#define VOID_CHAR '.'
 
 #endif //CONSTANT_H

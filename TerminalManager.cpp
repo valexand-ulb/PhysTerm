@@ -32,11 +32,11 @@ TerminalManager* TerminalManager::getInstance() {
 void TerminalManager::setSize() {
     struct winsize w;
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
-    width = w.ws_col - 1;
-    height = w.ws_row - 1;
+    width = w.ws_col;
+    height = w.ws_row;
     if (width <= 0 || height <= 0) {
-        width = DEFAULT_WIDTH - 1;
-        height = DEFAULT_HEIGHT - 1;
+        width = DEFAULT_WIDTH;
+        height = DEFAULT_HEIGHT;
     }
 }
 
@@ -47,8 +47,7 @@ void TerminalManager::drawPixel(int x, int y, char c) {
 }
 
 void TerminalManager::drawPixel(const vec2& v, const char c) {
-    std::cout << static_cast<int>(v.Y())*(width-1)+static_cast<int>(v.X()) << std::endl;
-    draw_buffer[static_cast<int>(v.Y())*(width-1)+static_cast<int>(v.X())] = c;
+    draw_buffer[static_cast<int>(v.Y())*width+static_cast<int>(v.X())] = c;
 }
 
 void TerminalManager::drawTriangle(const Triangle& t, char c) {

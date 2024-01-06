@@ -23,11 +23,11 @@ vec2::vec2() {
 void vec2::setSize() {
     struct winsize window;
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &window);
-    w = window.ws_col-1;
-    h = window.ws_row-1;
+    w = window.ws_col;
+    h = window.ws_row;
     if (w <= 0 || h <= 0) {
-        w = DEFAULT_WIDTH-1;
-        h = DEFAULT_HEIGHT-1;
+        w = DEFAULT_WIDTH;
+        h = DEFAULT_HEIGHT;
     }
 }
 
@@ -37,8 +37,8 @@ void vec2::normalize() {
     float normalized_x = 1.0f - (x + 1.0f) / 2.0f;
     float normalized_y = 1.0f - (y + 1.0f) / 2.0f;
 
-    x = normalized_x*(static_cast<float>(w));
-    y = normalized_y*(static_cast<float>(h));
+    x = normalized_x*(static_cast<float>(w)-1);
+    y = normalized_y*(static_cast<float>(h)-1);
 
     std::cout<< "x: " << x << " y: " << y << std::endl;
 }
