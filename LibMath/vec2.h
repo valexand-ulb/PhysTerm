@@ -10,7 +10,6 @@ private:
     float x,y;
     int w, h;
 
-    void setSize();
 public:
     vec2(float x, float y);
     vec2();

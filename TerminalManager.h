@@ -17,9 +17,6 @@ private:
     int width= DEFAULT_WIDTH;
     int height = DEFAULT_HEIGHT;
     std::vector<char> draw_buffer = std::vector(width*height, VOID_CHAR);
-    char* buffer;
-
-    void setSize();
 
     TerminalManager();
 

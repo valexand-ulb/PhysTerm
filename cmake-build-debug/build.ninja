@@ -79,6 +79,12 @@ build CMakeFiles/PhysicTerm.dir/LibMath/basicFunction.cpp.o: CXX_COMPILER__Physi
   OBJECT_DIR = CMakeFiles/PhysicTerm.dir
   OBJECT_FILE_DIR = CMakeFiles/PhysicTerm.dir/LibMath
 
+build CMakeFiles/PhysicTerm.dir/Utilities/utilites.cpp.o: CXX_COMPILER__PhysicTerm_unscanned_Debug /home/alex/CLionProjects/PhysicTerm/Utilities/utilites.cpp || cmake_object_order_depends_target_PhysicTerm
+  DEP_FILE = CMakeFiles/PhysicTerm.dir/Utilities/utilites.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/PhysicTerm.dir
+  OBJECT_FILE_DIR = CMakeFiles/PhysicTerm.dir/Utilities
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target PhysicTerm
@@ -87,7 +93,7 @@ build CMakeFiles/PhysicTerm.dir/LibMath/basicFunction.cpp.o: CXX_COMPILER__Physi
 #############################################
 # Link the executable PhysicTerm
 
-build PhysicTerm: CXX_EXECUTABLE_LINKER__PhysicTerm_Debug CMakeFiles/PhysicTerm.dir/main.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/vec2.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/Triangle.cpp.o CMakeFiles/PhysicTerm.dir/TerminalManager.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/basicFunction.cpp.o
+build PhysicTerm: CXX_EXECUTABLE_LINKER__PhysicTerm_Debug CMakeFiles/PhysicTerm.dir/main.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/vec2.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/Triangle.cpp.o CMakeFiles/PhysicTerm.dir/TerminalManager.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/basicFunction.cpp.o CMakeFiles/PhysicTerm.dir/Utilities/utilites.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/PhysicTerm.dir
   POST_BUILD = :

@@ -6,18 +6,17 @@
 #include <cmath>
 #include <iostream>
 #include <sys/ioctl.h>
-#include <unistd.h>
 #include <vector>
+
+#include "Utilities/utilities.h"
 
 TerminalManager::TerminalManager() {
     // get terminal size
-    setSize();
-    buffer = new char[width*height];
+    utilities::setSize(&width, &height);
     draw_buffer.resize(width*height, VOID_CHAR);
 }
 
 TerminalManager::~TerminalManager() {
-    delete[] buffer;
     delete instance;
 }
 
@@ -29,19 +28,8 @@ TerminalManager* TerminalManager::getInstance() {
     return instance;
 }
 
-void TerminalManager::setSize() {
-    struct winsize w;
-    ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
-    width = w.ws_col;
-    height = w.ws_row;
-    if (width <= 0 || height <= 0) {
-        width = DEFAULT_WIDTH;
-        height = DEFAULT_HEIGHT;
-    }
-}
-
 void TerminalManager::drawPixel(int x, int y, char c) {
-    if (x >= 0 && x <= width && y >= 0 && y <=  height);
+    if (x >= 0 && x <= width && y >= 0 && y <=  height)
         //buffer[y*width+x] = c;
         draw_buffer.at(y*width+x) = c;
 }
@@ -70,24 +58,20 @@ void TerminalManager::drawTriangle(const Triangle& t, char c) {
 void TerminalManager::render()const{
     //std::string s="\e[?25l";
     std::string s;
-    for (char c : draw_buffer) {
-        s += c;
+    for (unsigned int i = 0; i < draw_buffer.size(); i++) {
+        if (i % width == 0 && i != 0) {
+            s += "\n";
+        }
+        s += draw_buffer[i];
     }
     std::cout << s;
-    s = "";
 }
 
 void TerminalManager::clear() {
     for (char & i : draw_buffer) {
         i = VOID_CHAR;
     }
-    for (unsigned int i = 0; i <= sizeof(buffer)/sizeof(char); ++i) {
-        i = VOID_CHAR;
-    }
 }
-
-
-
 
 TerminalManager* TerminalManager::instance = nullptr;
 

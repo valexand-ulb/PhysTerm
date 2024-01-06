@@ -12,4 +12,6 @@ add_executable(PhysicTerm main.cpp
         TerminalManager.h
         LibMath/basicFunction.cpp
         LibMath/basicFunction.h
-        constant.h)
+        constant.h
+        Utilities/utilites.cpp
+        Utilities/utilities.h)
