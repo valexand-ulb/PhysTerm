@@ -18,6 +18,8 @@ public:
  vec2 P1()const{return p1;}
  vec2 P2()const{return p2;}
  vec2 P3()const{return p3;}
+
+
 };
 
 

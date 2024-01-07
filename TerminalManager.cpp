@@ -35,29 +35,23 @@ void TerminalManager::drawPixel(int x, int y, char c) {
 }
 
 void TerminalManager::drawPixel(const vec2& v, const char c) {
-    draw_buffer[static_cast<int>(v.Y())*width+static_cast<int>(v.X())] = c;
+    draw_buffer[static_cast<int>(v.y())*width+static_cast<int>(v.x())] = c;
 }
 
 void TerminalManager::drawTriangle(const Triangle& t, char c) {
-
-    const int xmin = static_cast<int>(std::round(std::min(t.P1().X(), std::min(t.P2().X(), t.P3().X()))));
-    const int xmax = static_cast<int>(std::round(std::max(t.P1().X(), std::max(t.P2().X(), t.P3().X()))));
-    const int ymin = static_cast<int>(std::round(std::min(t.P1().Y(), std::min(t.P2().Y(), t.P3().Y()))));
-    const int ymax = static_cast<int>(std::round(std::max(t.P1().Y(), std::max(t.P2().Y(), t.P3().Y()))));
-
-    for (int y = ymin; y <= ymax; y++) {
-        for (int x = xmin; x <= xmax; x++) {
-            vec2 pos(x,y);
-            if (basicFunction::isPointInTriangle(pos, t)){
-                drawPixel(pos, c);
+    for (unsigned i=0; i<=width; i++) {
+        for (unsigned j=0; j<=height; j++) {
+            vec2 v = vec2(i,j,0);
+            if (basicFunction::isPointInTriangle(v, t)) {
+                drawPixel(v, c);
             }
         }
     }
 }
 
 void TerminalManager::render()const{
-    //std::string s="\e[?25l";
-    std::string s;
+    std::string s="\e[?25l";
+    //std::string s;
     for (unsigned int i = 0; i < draw_buffer.size(); i++) {
         if (i % width == 0 && i != 0) {
             s += "\n";

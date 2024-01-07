@@ -1,19 +1,19 @@
 #include <iostream>
+#include <unistd.h>
 
 #include "TerminalManager.h"
 
 int main() {
     TerminalManager *tm = TerminalManager::getInstance();
     float t=0;
-    Triangle tri = Triangle(vec2(-0.5,-0.5), vec2(-0.5,0.5), vec2(0.5,0.5));
     //std::cout << "width :" << tm->getWidth() << " heigth: "  << tm->getHeight() << std::endl;
-    tm->drawPixel({-1,-1},'0');
-    tm->drawPixel({-1,1},'1');
-    tm->drawPixel({1,-1},'2');
-    tm->drawPixel({1,1},'3');
-    tm->drawTriangle(tri, 'X');
-
-    tm->drawPixel({0.5,0.5}, 'X');
-    //tm->render();
+    while (true) {
+        Triangle t1 = Triangle({0.0f,0.0f},{0.5f+t,0.5f},{-0.5f,0.5f+t});
+        tm->drawTriangle(t1, 'x');
+        tm->render();
+        tm->clear();
+        t+= 0.01;
+        if (t>1) t=0;
+    }
     return 0;
 }

@@ -5,8 +5,9 @@
 #ifndef CONSTANT_H
 #define CONSTANT_H
 
-#define DEFAULT_WIDTH 5
-#define DEFAULT_HEIGHT 5
-#define VOID_CHAR '.'
+#define DEBUG 0
+#define DEFAULT_WIDTH 75
+#define DEFAULT_HEIGHT 75
+#define VOID_CHAR ' '
 
 #endif //CONSTANT_H

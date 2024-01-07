@@ -5,17 +5,19 @@
 #include "vec2.h"
 
 #include <cmath>
-
-#include "../Utilities/utilities.h"
-
 #include <iostream>
 
-vec2::vec2(float x, float y):x{x},y{y} {
-    std::cout << "----------" << std::endl;
+#include "../Utilities/utilities.h"
+#include "../constant.h"
+
+
+
+vec2::vec2(float x, float y, bool normalized):tx{x},ty{y}, nx{x}, ny{y}{
+    if (DEBUG) std::cout << "----------" << std::endl;
     utilities::setSize(&w, &h);
-    std::cout << " x: " << this->x << " y: " << this->y << std::endl;
-    normalize();
-    std::cout << " x: " << this->x << " y: " << this->y << std::endl;
+    if (DEBUG) std::cout << " x: " << this->tx << " y: " << this->ty << std::endl;
+    if (normalized) normalize();
+    if (DEBUG) std::cout << " x: " << this->tx << " y: " << this->ty << std::endl;
 }
 vec2::vec2() {
     utilities::setSize(&w, &h);
@@ -23,9 +25,9 @@ vec2::vec2() {
 }
 
 void vec2::normalize() {
-    float normalized_x = (1 * x + 1.0f) / 2.0f;
-    float normalized_y = (y + 1.0f) / 2.0f;
+    float normalized_x = (tx + 1.0f) / 2.0f;
+    float normalized_y = 1.0f - (ty + 1.0f) / 2.0f;
 
-    x = std::round(normalized_x*(static_cast<float>(w)-1));
-    y = std::round(normalized_y*(static_cast<float>(h)-1));
+    tx = std::round(normalized_x*(static_cast<float>(w)-1));
+    ty = std::round(normalized_y*(static_cast<float>(h)-1));
 }

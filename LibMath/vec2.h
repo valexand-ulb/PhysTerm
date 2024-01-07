@@ -7,20 +7,24 @@
 
 class vec2 {
 private:
-    float x,y;
+    float tx,ty;
+    float nx, ny;
+
     int w, h;
 
 public:
-    vec2(float x, float y);
+    vec2(float x, float y, bool normalized=true);
     vec2();
 
-    float X()const{return x;}
-    float Y()const{return y;}
+    float x()const{return tx;}
+    float y()const{return ty;}
+    float normalized_x()const{return nx;}
+    float normalized_y()const{return ny;}
 
-    vec2 operator+(const vec2& v) const{return vec2(x+v.x, y+v.y);}
-    vec2 operator-(const vec2& v) const{return vec2(x-v.x, y-v.y);}
-    vec2 operator*(const float& f) const{return vec2(x*f, y*f);}
-    vec2 operator/(const float& f) const{return vec2(x/f, y/f);}
+    vec2 operator+(const vec2& v) const{return vec2(tx+v.tx, ty+v.ty);}
+    vec2 operator-(const vec2& v) const{return vec2(tx-v.tx, ty-v.ty);}
+    vec2 operator*(const float& f) const{return vec2(tx*f, ty*f);}
+    vec2 operator/(const float& f) const{return vec2(tx/f, ty/f);}
 
     void normalize();
 };
