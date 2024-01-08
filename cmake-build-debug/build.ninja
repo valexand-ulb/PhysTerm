@@ -55,17 +55,11 @@ build CMakeFiles/PhysicTerm.dir/main.cpp.o: CXX_COMPILER__PhysicTerm_unscanned_D
   OBJECT_DIR = CMakeFiles/PhysicTerm.dir
   OBJECT_FILE_DIR = CMakeFiles/PhysicTerm.dir
 
-build CMakeFiles/PhysicTerm.dir/LibMath/vec2.cpp.o: CXX_COMPILER__PhysicTerm_unscanned_Debug /home/alex/CLionProjects/PhysicTerm/LibMath/vec2.cpp || cmake_object_order_depends_target_PhysicTerm
-  DEP_FILE = CMakeFiles/PhysicTerm.dir/LibMath/vec2.cpp.o.d
+build CMakeFiles/PhysicTerm.dir/LibMath/Vector/vec2.cpp.o: CXX_COMPILER__PhysicTerm_unscanned_Debug /home/alex/CLionProjects/PhysicTerm/LibMath/Vector/vec2.cpp || cmake_object_order_depends_target_PhysicTerm
+  DEP_FILE = CMakeFiles/PhysicTerm.dir/LibMath/Vector/vec2.cpp.o.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/PhysicTerm.dir
-  OBJECT_FILE_DIR = CMakeFiles/PhysicTerm.dir/LibMath
-
-build CMakeFiles/PhysicTerm.dir/LibMath/Triangle.cpp.o: CXX_COMPILER__PhysicTerm_unscanned_Debug /home/alex/CLionProjects/PhysicTerm/LibMath/Triangle.cpp || cmake_object_order_depends_target_PhysicTerm
-  DEP_FILE = CMakeFiles/PhysicTerm.dir/LibMath/Triangle.cpp.o.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/PhysicTerm.dir
-  OBJECT_FILE_DIR = CMakeFiles/PhysicTerm.dir/LibMath
+  OBJECT_FILE_DIR = CMakeFiles/PhysicTerm.dir/LibMath/Vector
 
 build CMakeFiles/PhysicTerm.dir/TerminalManager.cpp.o: CXX_COMPILER__PhysicTerm_unscanned_Debug /home/alex/CLionProjects/PhysicTerm/TerminalManager.cpp || cmake_object_order_depends_target_PhysicTerm
   DEP_FILE = CMakeFiles/PhysicTerm.dir/TerminalManager.cpp.o.d
@@ -85,6 +79,24 @@ build CMakeFiles/PhysicTerm.dir/Utilities/utilites.cpp.o: CXX_COMPILER__PhysicTe
   OBJECT_DIR = CMakeFiles/PhysicTerm.dir
   OBJECT_FILE_DIR = CMakeFiles/PhysicTerm.dir/Utilities
 
+build CMakeFiles/PhysicTerm.dir/LibMath/Vector/vec3.cpp.o: CXX_COMPILER__PhysicTerm_unscanned_Debug /home/alex/CLionProjects/PhysicTerm/LibMath/Vector/vec3.cpp || cmake_object_order_depends_target_PhysicTerm
+  DEP_FILE = CMakeFiles/PhysicTerm.dir/LibMath/Vector/vec3.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/PhysicTerm.dir
+  OBJECT_FILE_DIR = CMakeFiles/PhysicTerm.dir/LibMath/Vector
+
+build CMakeFiles/PhysicTerm.dir/LibMath/Triangle/Triangle2D.cpp.o: CXX_COMPILER__PhysicTerm_unscanned_Debug /home/alex/CLionProjects/PhysicTerm/LibMath/Triangle/Triangle2D.cpp || cmake_object_order_depends_target_PhysicTerm
+  DEP_FILE = CMakeFiles/PhysicTerm.dir/LibMath/Triangle/Triangle2D.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/PhysicTerm.dir
+  OBJECT_FILE_DIR = CMakeFiles/PhysicTerm.dir/LibMath/Triangle
+
+build CMakeFiles/PhysicTerm.dir/LibMath/Triangle/Triangle3D.cpp.o: CXX_COMPILER__PhysicTerm_unscanned_Debug /home/alex/CLionProjects/PhysicTerm/LibMath/Triangle/Triangle3D.cpp || cmake_object_order_depends_target_PhysicTerm
+  DEP_FILE = CMakeFiles/PhysicTerm.dir/LibMath/Triangle/Triangle3D.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/PhysicTerm.dir
+  OBJECT_FILE_DIR = CMakeFiles/PhysicTerm.dir/LibMath/Triangle
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target PhysicTerm
@@ -93,7 +105,7 @@ build CMakeFiles/PhysicTerm.dir/Utilities/utilites.cpp.o: CXX_COMPILER__PhysicTe
 #############################################
 # Link the executable PhysicTerm
 
-build PhysicTerm: CXX_EXECUTABLE_LINKER__PhysicTerm_Debug CMakeFiles/PhysicTerm.dir/main.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/vec2.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/Triangle.cpp.o CMakeFiles/PhysicTerm.dir/TerminalManager.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/basicFunction.cpp.o CMakeFiles/PhysicTerm.dir/Utilities/utilites.cpp.o
+build PhysicTerm: CXX_EXECUTABLE_LINKER__PhysicTerm_Debug CMakeFiles/PhysicTerm.dir/main.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/Vector/vec2.cpp.o CMakeFiles/PhysicTerm.dir/TerminalManager.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/basicFunction.cpp.o CMakeFiles/PhysicTerm.dir/Utilities/utilites.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/Vector/vec3.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/Triangle/Triangle2D.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/Triangle/Triangle3D.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/PhysicTerm.dir
   POST_BUILD = :

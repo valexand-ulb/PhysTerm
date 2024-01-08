@@ -30,7 +30,6 @@ TerminalManager* TerminalManager::getInstance() {
 
 void TerminalManager::drawPixel(int x, int y, char c) {
     if (x >= 0 && x <= width && y >= 0 && y <=  height)
-        //buffer[y*width+x] = c;
         draw_buffer.at(y*width+x) = c;
 }
 
@@ -38,10 +37,14 @@ void TerminalManager::drawPixel(const vec2& v, const char c) {
     draw_buffer[static_cast<int>(v.y())*width+static_cast<int>(v.x())] = c;
 }
 
-void TerminalManager::drawTriangle(const Triangle& t, char c) {
-    for (unsigned i=0; i<=width; i++) {
-        for (unsigned j=0; j<=height; j++) {
-            vec2 v = vec2(i,j,0);
+void TerminalManager::drawTriangle(const Triangle2D& t, char c) {
+    float x_min, x_max, y_min, y_max;
+    basicFunction::min_of_triangle(t, x_min, y_min);
+    basicFunction::max_of_triangle(t, x_max, y_max);
+    //std::cout << "x_min: " << x_min << " x_max: " << x_max << " y_min: " << y_min << " y_max: " << y_max << std::endl;
+    for (unsigned i=x_min; i<=x_max; i++) {
+        for (unsigned j=y_min; j<=y_max; j++) {
+            vec2 v = vec2(i,j);
             if (basicFunction::isPointInTriangle(v, t)) {
                 drawPixel(v, c);
             }

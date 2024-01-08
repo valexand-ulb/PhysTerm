@@ -8,7 +8,7 @@
 #include <vector>
 
 #include "constant.h"
-#include "LibMath/Triangle.h"
+#include "LibMath/Triangle/Triangle2D.h"
 #include "LibMath/basicFunction.h"
 
 class TerminalManager {
@@ -29,7 +29,7 @@ public:
 
     void drawPixel(int x, int y, char c);
     void drawPixel(const vec2& v, char c);
-    void drawTriangle(const Triangle &t, char c);
+    void drawTriangle(const Triangle2D &t, char c);
 
     void render()const;
     void clear();
