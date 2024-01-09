@@ -11,8 +11,6 @@ private:
     float tx,ty;
     float nx, ny;
 
-    int w, h;
-
 public:
     vec2(float x, float y);
     vec2();
@@ -31,7 +29,7 @@ public:
 
 
 
-    vec2 normalize();
+    vec2 normalize(float w, float h);
 };
 
 

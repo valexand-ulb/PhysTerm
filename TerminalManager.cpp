@@ -43,10 +43,14 @@ void TerminalManager::drawTriangle(const Triangle2D& t, char c) {
     basicFunction::max_of_triangle(t, x_max, y_max);
     //std::cout << "x_min: " << x_min << " x_max: " << x_max << " y_min: " << y_min << " y_max: " << y_max << std::endl;
     for (unsigned i=x_min; i<=x_max; i++) {
-        for (unsigned j=y_min; j<=y_max; j++) {
-            vec2 v = vec2(i,j);
-            if (basicFunction::isPointInTriangle(v, t)) {
-                drawPixel(v, c);
+        if ( i < width && i >= 0) {
+            for (unsigned j=y_min; j<=y_max; j++) {
+                if (j >= 0 && j < height) {
+                    vec2 v = vec2(i,j);
+                    if (basicFunction::isPointInTriangle(v, t)) {
+                        drawPixel(v, c);
+                    }
+                }
             }
         }
     }
@@ -68,6 +72,7 @@ void TerminalManager::clear() {
     for (char & i : draw_buffer) {
         i = VOID_CHAR;
     }
+    std::cout.flush();
 }
 
 TerminalManager* TerminalManager::instance = nullptr;

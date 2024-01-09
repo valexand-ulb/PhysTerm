@@ -11,7 +11,6 @@
 class Triangle2D {
 private:
     vec2 p1, p2, p3;
-    int w,h;
 
 public:
     Triangle2D(const vec2 &p1, const vec2 &p2, const vec2 &p3): p1(p1), p2(p2), p3(p3) {}
@@ -21,7 +20,7 @@ public:
 
 
     friend std::ostream& operator<<(std::ostream& os, const Triangle2D &t){return os <<"p1" << t.p1 << ", p2" << t.p2 << ", p3" << t.p3 << std::endl;}
-    Triangle2D normalize();
+    Triangle2D normalize(float w, float h);
 
 };
 #endif //TRIANGLE2D_H

@@ -19,4 +19,6 @@ add_executable(PhysicTerm main.cpp
         LibMath/Triangle/Triangle2D.h
         LibMath/Triangle/Triangle3D.cpp
         LibMath/Triangle/Triangle3D.h
+        Utilities/Debug.cpp
+        Utilities/Debug.h
 )

@@ -11,13 +11,11 @@
 
 
 vec2::vec2(float x, float y):tx{x},ty{y}, nx{x}, ny{y}{
-    utilities::setSize(&w, &h);
 }
 vec2::vec2() {
-    utilities::setSize(&w, &h);
 }
 
-vec2 vec2::normalize() {
+vec2 vec2::normalize(float w, float h) {
     float normalized_x = (tx + 1.0f) / 2.0f;
     float normalized_y = 1.0f - (ty + 1.0f) / 2.0f;
 

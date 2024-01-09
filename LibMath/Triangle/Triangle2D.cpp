@@ -4,6 +4,6 @@
 
 #include "Triangle2D.h"
 
-Triangle2D Triangle2D::normalize() {
-    return Triangle2D(p1.normalize(),p2.normalize(),p3.normalize());
+Triangle2D Triangle2D::normalize(float w, float h) {
+    return Triangle2D(p1.normalize(w,h),p2.normalize(w,h),p3.normalize(w,h));
 }

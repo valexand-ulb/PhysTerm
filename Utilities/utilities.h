@@ -6,7 +6,7 @@
 #define SETSIZE_H
 
 #define BORDER_W 0
-#define BORDER_H 1
+#define BORDER_H 0
 
 
 
