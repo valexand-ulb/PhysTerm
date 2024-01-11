@@ -103,6 +103,12 @@ build CMakeFiles/PhysicTerm.dir/Utilities/Debug.cpp.o: CXX_COMPILER__PhysicTerm_
   OBJECT_DIR = CMakeFiles/PhysicTerm.dir
   OBJECT_FILE_DIR = CMakeFiles/PhysicTerm.dir/Utilities
 
+build CMakeFiles/PhysicTerm.dir/Camera.cpp.o: CXX_COMPILER__PhysicTerm_unscanned_Debug /home/alex/CLionProjects/PhysicTerm/Camera.cpp || cmake_object_order_depends_target_PhysicTerm
+  DEP_FILE = CMakeFiles/PhysicTerm.dir/Camera.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/PhysicTerm.dir
+  OBJECT_FILE_DIR = CMakeFiles/PhysicTerm.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target PhysicTerm
@@ -111,7 +117,7 @@ build CMakeFiles/PhysicTerm.dir/Utilities/Debug.cpp.o: CXX_COMPILER__PhysicTerm_
 #############################################
 # Link the executable PhysicTerm
 
-build PhysicTerm: CXX_EXECUTABLE_LINKER__PhysicTerm_Debug CMakeFiles/PhysicTerm.dir/main.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/Vector/vec2.cpp.o CMakeFiles/PhysicTerm.dir/TerminalManager.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/basicFunction.cpp.o CMakeFiles/PhysicTerm.dir/Utilities/utilites.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/Vector/vec3.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/Triangle/Triangle2D.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/Triangle/Triangle3D.cpp.o CMakeFiles/PhysicTerm.dir/Utilities/Debug.cpp.o
+build PhysicTerm: CXX_EXECUTABLE_LINKER__PhysicTerm_Debug CMakeFiles/PhysicTerm.dir/main.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/Vector/vec2.cpp.o CMakeFiles/PhysicTerm.dir/TerminalManager.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/basicFunction.cpp.o CMakeFiles/PhysicTerm.dir/Utilities/utilites.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/Vector/vec3.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/Triangle/Triangle2D.cpp.o CMakeFiles/PhysicTerm.dir/LibMath/Triangle/Triangle3D.cpp.o CMakeFiles/PhysicTerm.dir/Utilities/Debug.cpp.o CMakeFiles/PhysicTerm.dir/Camera.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/PhysicTerm.dir
   POST_BUILD = :

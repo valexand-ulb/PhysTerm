@@ -21,4 +21,6 @@ add_executable(PhysicTerm main.cpp
         LibMath/Triangle/Triangle3D.h
         Utilities/Debug.cpp
         Utilities/Debug.h
+        Camera.cpp
+        Camera.h
 )

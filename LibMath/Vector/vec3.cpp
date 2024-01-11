@@ -8,19 +8,21 @@
 #include <iostream>
 
 
-void vec3::rotationX(float pitch) {
+vec3 vec3::rotationX(float pitch) const {
     float cos_pitch = std::cos(pitch);
     float sin_pitch = std::sin(pitch);
-    ty = std::round(ty * cos_pitch - tz * sin_pitch) ;
-    tz = std::round(ty * sin_pitch + tz * cos_pitch);
+    float new_ty = ty * cos_pitch - tz * sin_pitch;
+    float new_tz = ty * sin_pitch + tz * cos_pitch;
+    return vec3(tx, new_ty, new_tz);
 }
 
-void vec3::rotationY(float yaw) {
+vec3 vec3::rotationY(float yaw) const {
     float cos_yaw = std::cos(yaw);
     float sin_yaw = std::sin(yaw);
 
-    tx = std::round(tx * cos_yaw + tz * sin_yaw);
-    tz = std::round(-tx * sin_yaw + tz * cos_yaw);
+    float new_tx = tx * cos_yaw + tz * sin_yaw;
+    float new_tz = -tx * sin_yaw + tz * cos_yaw;
+    return vec3(new_tx, ty, new_tz);
 }
 
 

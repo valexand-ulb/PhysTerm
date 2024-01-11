@@ -7,9 +7,11 @@
 
 #include <vector>
 
+#include "Camera.h"
 #include "constant.h"
 #include "LibMath/Triangle/Triangle2D.h"
 #include "LibMath/basicFunction.h"
+#include "LibMath/Triangle/Triangle3D.h"
 
 class TerminalManager {
 private:
@@ -30,6 +32,7 @@ public:
     void drawPixel(int x, int y, char c);
     void drawPixel(const vec2& v, char c);
     void drawTriangle(const Triangle2D &t, char c);
+    void drawMesh(const std::vector<Triangle3D> &mesh, const Camera& cam, char c);
 
     void render()const;
     void clear();

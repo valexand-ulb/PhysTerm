@@ -10,6 +10,8 @@
 
 #include "Utilities/utilities.h"
 
+class Triangle3D;
+
 TerminalManager::TerminalManager() {
     // get terminal size
     utilities::setSize(&width, &height);
@@ -53,6 +55,19 @@ void TerminalManager::drawTriangle(const Triangle2D& t, char c) {
                 }
             }
         }
+    }
+}
+
+void TerminalManager::drawMesh(const std::vector<Triangle3D>& mesh, const Camera &cam, char c) {
+    for (const Triangle3D& t : mesh) {
+        //std::cout << t.translation(cam.getPosition()*-1).rotateY(cam.getYaw()).rotateX() << std::endl;
+        drawTriangle(
+            t.translation(cam.getPosition() * -1)
+            .rotateY(cam.getYaw())
+            .rotateX(cam.getPitch())
+            .projection(cam.getFocalLength())
+            .normalize(width, height),
+            c);
     }
 }
 
